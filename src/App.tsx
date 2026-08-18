@@ -14,7 +14,7 @@ type NavId = 'home' | 'dre' | 'estoque' | 'saude' | 'perfil' | 'configuracoes';
 
 function LoadingScreen() {
   return (
-    <div className="min-h-screen bg-neutral-50 flex items-center justify-center">
+    <div className="min-h-screen bg-ant-lilac flex items-center justify-center">
       <div className="flex flex-col items-center gap-4">
         <img src="/assets/images/ant.png" alt="ANT" className="w-12 h-12 object-contain animate-pulse" />
         <p className="text-sm text-neutral-400 font-medium">Carregando...</p>
@@ -39,13 +39,13 @@ export default function App() {
 
   const renderPage = () => {
     switch (activeNav) {
-      case 'home':        return <Home onNavChange={setActiveNav} userName={userName} />;
+      case 'home':        return <Home onNavChange={(id) => setActiveNav(id as NavId)} userName={userName} />;
       case 'dre':         return <DRE />;
       case 'estoque':     return <Estoque />;
-      case 'saude':       return <SaudeNegocio />;
+      case 'saude':       return <SaudeNegocio onNavChange={(id) => setActiveNav(id as NavId)} />;
       case 'perfil':      return <Perfil userName={userName} userEmail={userEmail} />;
       case 'configuracoes': return <Configuracoes />;
-      default:            return <Home onNavChange={setActiveNav} userName={userName} />;
+      default:            return <Home onNavChange={(id) => setActiveNav(id as NavId)} userName={userName} />;
     }
   };
 

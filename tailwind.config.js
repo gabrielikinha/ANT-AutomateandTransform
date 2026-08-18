@@ -17,6 +17,7 @@ export default {
           900: '#3b0764',
         },
         ant: {
+          lilac: '#F6F3FC',
           purple: '#6B21A8',
           'purple-light': '#9333EA',
           'purple-soft': '#EDE9FE',

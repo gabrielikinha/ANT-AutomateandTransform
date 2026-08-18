@@ -11,7 +11,7 @@ interface LayoutProps {
 
 export default function Layout({ activeNav, onNavChange, onLogout, userName, children }: LayoutProps) {
   return (
-    <div className="flex h-screen overflow-hidden bg-neutral-50">
+    <div className="flex h-screen overflow-hidden bg-ant-lilac">
       <Sidebar
         activeNav={activeNav}
         onNavChange={onNavChange}
